@@ -1,0 +1,90 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 14
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.01 sec)
+
+mysql> create database student;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| student            |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use student
+Database changed
+mysql> create table student(
+    -> ID unt not null,
+    -> Name varchar(20) not null,
+    -> age int not null,
+    -> course char(20) not null,
+    -> PRIMARY KEY(ID)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'unt not null,
+Name varchar(20) not null,
+age int not null,
+course char(20) not n' at line 2
+mysql>  create table student(
+    ->     -> ID unt not null,
+    ->     -> Name varchar(20) not null,
+    ->     -> age int not null,
+    ->     -> course char(20) not null,
+    ->     -> PRIMARY KEY(ID)
+    -> clear
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> ID unt not null,
+    -> Name varchar(20) not null,
+    -> age int not null,
+ ' at line 2
+mysql> Create table student(
+    -> ID int not null,
+    -> Name varchar(20) not null,
+    -> age int not null,
+    -> course char(20) not null,
+    -> PRIMARY KEY(ID)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> desc student
+    -> ;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| ID     | int         | NO   | PRI | NULL    |       |
+| Name   | varchar(20) | NO   |     | NULL    |       |
+| age    | int         | NO   |     | NULL    |       |
+| course | char(20)    | NO   |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql>
